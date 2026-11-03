@@ -17,16 +17,16 @@
 - Use `scripts/sign-android-update.sh` or the opted-in encrypted-secret original-key Actions process. The private `Buttongame-signing-keystore.p12` and password must never be committed, pasted in logs, or exposed.
 - If a key is missing or does not match the current device, be explicit; **do not claim to have produced an update APK**. Preserve host scores and document the one-time migration boundary if the old debug private key is lost.
 
-**Update — 26 October 2026:** Babuni.dev subsequently authorized full Red Trap Button implementation at **10%** replacement probability, with immediate Game Over and conservation of already-earned pending points. The feature is **implemented in GitHub source**, and the native Android compilation and new trap regression passed in [Actions run 40365295833](https://github.com/babunidev/ButtonGame/actions/runs/40365295833). Any earlier language below saying this mode is not started or not authorized records the **historical status at that time** and is superseded. An Android APK signed with the original release certificate and physical Trap Mode verification remain **pending**. See [the current Red Trap Button specification](docs/TRAP_MODE.md).
+**Update — 26 October 2026:** Babuni subsequently authorized full Red Trap Button implementation at **10%** replacement probability, with immediate Game Over and conservation of already-earned pending points. The feature is **implemented in GitHub source**, and the native Android compilation and new trap regression passed in [Actions run 40365295833](https://github.com/babunidev/ButtonGame/actions/runs/40365295833). Any earlier language below saying this mode is not started or not authorized records the **historical status at that time** and is superseded. An Android APK signed with the original release certificate and physical Trap Mode verification remain **pending**. See [the current Red Trap Button specification](docs/TRAP_MODE.md).
 
-This is a Babuni.dev-directed artwork and a software project. Preserve the user's authorship, distinctive mechanics and decision history.
+This is a Babuni-directed artwork and a software project. Preserve the user's authorship, distinctive mechanics and decision history.
 
 ## Authority and scope
 
 1. **Babuni's direction takes precedence.** Do not treat ideas proposed by an assistant as approved features. Never attribute the user's concepts or constraints to AI.
 2. **Do not redesign the game without approval.** The existing turquoise jacket-button interaction, physical number mergers, Quick Strike, special 21→42 / 37→73 effects, time/score collectors, and Wi-Fi host model are intentional.
-3. Babuni.dev has supplied the [nine-item Red Trap Button specification](docs/TRAP_MODE.md), expanding the earlier [six-item historical checklist](docs/HISTORICAL_CHECKLIST_2026-10-25.md). It defines a pre-game toggle, random red replacements with normal button lifecycle, immediate loss on tapping, untouched expiry/shatter, passive +3 points each ⅓ second from center through standard float/fusion, saved mode flag, and red leaderboard icon. **IMPLEMENTED IN SOURCE AFTER EXPLICIT BABUNI.DEV APPROVAL.** The new native build is not yet an originally signed delivered update. Preserve original user wording and do not invent unresolved timing/probability edge cases.
-4. **Babuni.dev has already tested and confirmed the working installed game on two phones:** Quick Strike, combos, timers/HUD, sound, player list, guest scores, Game Over live refresh and score persistence. Do not repeatedly re-add these as unfinished QA. Sound packaging is now complete in source; the remaining release gate is to verify the new CI build, then original-certificate sign/install the **same** Android app (not a TEST variant). Beta high scores need not be preserved.
+3. Babuni has supplied the [nine-item Red Trap Button specification](docs/TRAP_MODE.md), expanding the earlier [six-item historical checklist](docs/HISTORICAL_CHECKLIST_2026-10-25.md). It defines a pre-game toggle, random red replacements with normal button lifecycle, immediate loss on tapping, untouched expiry/shatter, passive +3 points each ⅓ second from center through standard float/fusion, saved mode flag, and red leaderboard icon. **IMPLEMENTED IN SOURCE AFTER EXPLICIT BABUNI APPROVAL.** The new native build is not yet an originally signed delivered update. Preserve original user wording and do not invent unresolved timing/probability edge cases.
+4. **Babuni has already tested and confirmed the working installed game on two phones:** Quick Strike, combos, timers/HUD, sound, player list, guest scores, Game Over live refresh and score persistence. Do not repeatedly re-add these as unfinished QA. Sound packaging is now complete in source; the remaining release gate is to verify the new CI build, then original-certificate sign/install the **same** Android app (not a TEST variant). Beta high scores need not be preserved.
 5. **Keep this a simple game.** Do not add an unnecessary score submission retry, complicated startup protection or abstract hardening as milestones without a real user-observed problem or explicit request. Bluetooth and peer-to-peer are exploratory ideas, not roadmap milestones. Never replace or rewrite the archived Flash game or earlier reconstruction while editing the modern game.
 
 ## Inspect before editing
@@ -59,7 +59,7 @@ For substantive code or design work, update the relevant documents in the same r
 - `CONCEPT.md`: creative purpose and explicitly approved feature boundaries.
 - `ROADMAP.md`: active tasks and their evidence-backed statuses.
 - `CHANGELOG.md`: changes actually implemented.
-- `docs/DEVLOG.md`: narrative of Babuni.dev intent, AI proposal, iteration, failures and verification; the original `DEVLOG.md` is retained.
+- `docs/DEVLOG.md`: narrative of Babuni's intent, AI proposal, iteration, failures and verification; the original `DEVLOG.md` is retained.
 - `docs/DECISIONS.md`: accepted/rejected/deferred choices, with provenance.
 - `docs/DESIGN.md` and `docs/ARCHITECTURE.md`: observable behavioral/technical changes.
 - `docs/CONTENT.md` and `docs/AI_COLLABORATION.md`: publication-safe portfolio and attribution.
@@ -77,7 +77,7 @@ A documentation-only change does not validate gameplay, sign an APK, or close re
 
 ## Author attribution
 
-Use **Babuni** as the named human creative in metadata and public-facing documentation. Do not describe Babuni.dev with the role label “creator.” Record specific AI contributions separately without shifting ownership of original ideas.
+Use **Babuni** as the named human creative in metadata and public-facing documentation. Do not describe Babuni with the role label “creator.” Record specific AI contributions separately without shifting ownership of original ideas.
 
 ## Repository-local documentation standard
 
