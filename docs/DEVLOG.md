@@ -1,5 +1,11 @@
 # Button Game — Curated Development Journal
 
+## 2026-11-04 — The global leaderboard must never stop at the top 50
+
+For a publicly hosted Button Game, the initial plan mentioned an open question about leaderboard size. The direction is now clear: the leaderboard should keep **every player's submitted results** in one shared, all-time ranking and remain scrollable to the very end, rather than hiding or discarding everyone below the top 50. Names, points, Reaction, APM, game duration and the red Traps marker all remain visible with the appropriate score.
+
+The AI translated that requirement into a roadmap for complete score retention and incremental leaderboard loading. Pagination would limit how much the browser downloads at once, **not** how many results are stored or can eventually be viewed. The rules for duplicate names and repeated attempts remain undecided. This was a documentation-only clarification: the current local desktop server still retains only 50 scores, and no public database, unlimited leaderboard or deployment has been implemented.
+
 ## 2026-10-27 — Reading a mature, creator-led history without replacing it
 
 **User direction:** Continue the numbered portfolio GitHub audit with repository #27 after FlourishForever. ButtonGame is the next repository in the relevant sequence. This is the creator's game originating in **2009**, with preserved Flash files and a 2026 HTML5/Android/desktop rebuild; the repository creation timestamp must not replace the date of original invention.

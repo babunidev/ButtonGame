@@ -8,14 +8,16 @@
 
 - [ ] Confirm a deployment address on the creator's server (domain/subdomain or URL path), without assuming an existing hosting route can be changed.
 - [ ] Keep the current `index.html`, `game.js`, artwork, sound, and Traps mode; serve game and API from the **same origin** so existing relative `/api/scores` and `/api/presence` calls work without extra client setup.
-- [ ] Decide public high-score presentation: one **all-time** leaderboard, number of displayed entries (the LAN implementation currently limits to 50), whether to keep full submission history, and whether to allow a future reset/season. Do not invent separate leaderboards unless requested.
-- [ ] Preserve saved fields—player name, points, Reaction, APM, run duration, and Traps flag/red icon—and support mobile and desktop layouts without changing gameplay.
+- [ ] Implement **one global, all-time leaderboard** shared by every player using the public server. **Do not cap the global list at 50**: every submitted result must remain available, including lower-ranked and older results, unless removed for legitimate moderation or data-integrity reasons.
+- [ ] Make the leaderboard **scrollable all the way to the end** so visitors can see all historical entries, not just the top players. Load older/lower-ranked entries incrementally (e.g. paginated or infinite scroll) instead of trying to download the entire history at once.
+- [ ] Preserve and display every score entry's **player name, points, Reaction, APM, run duration, and Traps flag/red button marker**, retaining existing gameplay and responsive layouts.
+- [ ] Specify how repeated submissions under the same name appear and whether names represent distinct players. Do not silently merge or remove entries: no login/identity rule has yet been chosen.
 - [ ] Decide whether native Android app users should later connect to this **global server** instead of the app's separate local host; that requires deliberate Android integration, not an assumption that current APKs sync.
 
 ### Phase 2 — Adapt the desktop LAN server for internet use
 
 - [ ] Reuse the Python server's API contract as a starting point, but run a production backend instead of directly exposing `scripts/serve-desktop.py` on the internet.
-- [ ] Introduce durable storage suited to concurrent public writes (SQLite is a reasonable small-scale default), with a schema migration from `.local-data/desktop-scores.json` only if importing existing desktop scores is desired.
+- [ ] Introduce durable storage suited to concurrent public writes (SQLite is a reasonable small-scale default) and **retain the complete all-time submission history**, not just the current desktop host's top 50. Add stable ranking, a deterministic tie-break order, efficient indexes, and an API that can page through **every** record. Consider a migration from `.local-data/desktop-scores.json` only if importing existing desktop scores is desired.
 - [ ] Validate all score/presence inputs server-side: length, type, size limits, allowed fields, and reasonable bounds. Display names must be rendered safely. Current browser clients can submit arbitrary numbers, so do **not** promise cheat-proof scores without further design.
 - [ ] Add essential public abuse safeguards: reasonable POST rate limits, protection against score spam and excessively large payloads, basic server-side logging without disclosing unnecessary player data, and administrative removal of malicious entries.
 - [ ] Decide how to handle live player presence globally and how frequently to poll it at higher traffic; keep game scoring independent of presence.
@@ -34,6 +36,7 @@
 
 - [ ] Test from two or more **different networks**, not just another device on the home Wi-Fi, with score submission and shared leaderboard refresh.
 - [ ] Test simultaneous submissions, normal and Traps runs, Game Over pending-point settlement, persistence after server reboot, username rendering, basic malformed/spam requests, and score moderation.
+- [ ] Test with **more than 50 submitted scores** and verify that every entry remains stored, correctly ranked, and reachable by scrolling through all leaderboard pages—including the oldest and lowest-ranked entries—without duplicates or missing rows.
 - [ ] Verify mobile/desktop browser gameplay, live player list, keyboard/touch controls, Ogg/MP3 sound, and HTTPS/browser security behavior.
 - [ ] Document the public URL, server setup, safe update/rollback and backup procedure in `README.md`, `INSTALL.md`, `docs/ARCHITECTURE.md`, `CHANGELOG.md` and `docs/DEVLOG.md` **after actual implementation and verification**.
 
