@@ -1,5 +1,44 @@
 # Button Game — Current Project To-Do
 
+## Public server with one global high-score leaderboard — proposed, not deployed (4 November 2026)
+
+**Babuni's requested outcome:** Run Button Game on their own internet-accessible server so every visitor can play the same HTML5 game and all online players contribute to **one central high-score leaderboard**. Reuse the current browser game; the Android and desktop local-host score files are separate today and are **not** automatically global. This section is a plan only; no server has been configured.
+
+### Phase 1 — Keep the existing game and specify the public scoreboard
+
+- [ ] Confirm a deployment address on the creator's server (domain/subdomain or URL path), without assuming an existing hosting route can be changed.
+- [ ] Keep the current `index.html`, `game.js`, artwork, sound, and Traps mode; serve game and API from the **same origin** so existing relative `/api/scores` and `/api/presence` calls work without extra client setup.
+- [ ] Decide public high-score presentation: one **all-time** leaderboard, number of displayed entries (the LAN implementation currently limits to 50), whether to keep full submission history, and whether to allow a future reset/season. Do not invent separate leaderboards unless requested.
+- [ ] Preserve saved fields—player name, points, Reaction, APM, run duration, and Traps flag/red icon—and support mobile and desktop layouts without changing gameplay.
+- [ ] Decide whether native Android app users should later connect to this **global server** instead of the app's separate local host; that requires deliberate Android integration, not an assumption that current APKs sync.
+
+### Phase 2 — Adapt the desktop LAN server for internet use
+
+- [ ] Reuse the Python server's API contract as a starting point, but run a production backend instead of directly exposing `scripts/serve-desktop.py` on the internet.
+- [ ] Introduce durable storage suited to concurrent public writes (SQLite is a reasonable small-scale default), with a schema migration from `.local-data/desktop-scores.json` only if importing existing desktop scores is desired.
+- [ ] Validate all score/presence inputs server-side: length, type, size limits, allowed fields, and reasonable bounds. Display names must be rendered safely. Current browser clients can submit arbitrary numbers, so do **not** promise cheat-proof scores without further design.
+- [ ] Add essential public abuse safeguards: reasonable POST rate limits, protection against score spam and excessively large payloads, basic server-side logging without disclosing unnecessary player data, and administrative removal of malicious entries.
+- [ ] Decide how to handle live player presence globally and how frequently to poll it at higher traffic; keep game scoring independent of presence.
+- [ ] Ensure the original Ogg recordings work and package MP3 alternatives for browsers lacking Ogg/Vorbis support; actual browser sound verification is still pending.
+- [ ] Review redistribution/licensing and third-party asset rights before public launch.
+
+### Phase 3 — Deploy to the creator's own server
+
+- [ ] Prepare a dedicated deployment directory and low-privilege service account; keep database, backups, private configuration and logs **outside** the web-served directory.
+- [ ] Run the backend on a loopback-only port, controlled by `systemd` (or equivalent), restarting safely after machine reboot.
+- [ ] Set up a reverse proxy (e.g. Caddy or Nginx) for the chosen domain, HTTPS/TLS, and routes for static gameplay and `/api/*`. Expose only the intended public web ports, not raw LAN port 8000.
+- [ ] Configure deployment updates from the GitHub repository, permissions, migration/rollback behavior, and backups with a tested restore procedure.
+- [ ] Check that the website and leaderboard survive service restarts and do not discard existing records on deployments.
+
+### Phase 4 — Verify real public play and publish
+
+- [ ] Test from two or more **different networks**, not just another device on the home Wi-Fi, with score submission and shared leaderboard refresh.
+- [ ] Test simultaneous submissions, normal and Traps runs, Game Over pending-point settlement, persistence after server reboot, username rendering, basic malformed/spam requests, and score moderation.
+- [ ] Verify mobile/desktop browser gameplay, live player list, keyboard/touch controls, Ogg/MP3 sound, and HTTPS/browser security behavior.
+- [ ] Document the public URL, server setup, safe update/rollback and backup procedure in `README.md`, `INSTALL.md`, `docs/ARCHITECTURE.md`, `CHANGELOG.md` and `docs/DEVLOG.md` **after actual implementation and verification**.
+
+**Not implemented yet:** Public hosting, a shared global database, hardening, public HTTPS, or Android-to-global-server syncing. Existing LAN high-score features remain intact.
+
 ## 2026-10-27 — Outstanding verification after documentation audit
 
 - [x] **Source exists:** 10% optional red Trap Mode with pending-score settlement; widescreen player/game/score layout; separate Python LAN host; Web Audio-to-media-element fallback.

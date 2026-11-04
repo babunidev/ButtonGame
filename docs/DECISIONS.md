@@ -1,5 +1,13 @@
 # Button Game — Decisions and Open Questions
 
+## D-025 — One public Button Game leaderboard on the creator's own server (requested, planning)
+
+- **Creative direction (4 November 2026):** Babuni wants a version of Button Game hosted on their own server, with **one shared high-score list for everyone**, and asks whether it can reuse the desktop game.
+- **Verified starting point:** The existing browser game is reused on desktop and Android. The Python desktop LAN backend already supplies `/api/scores` and `/api/presence` but saves a **host-local top-50 JSON file** and is explicitly designed for trusted LAN use. Android's native host saves scores separately. Neither is currently a public global leaderboard.
+- **Proposed technical approach (AI, not yet approved in detail):** Keep the browser frontend and relative API contract; create an internet-safe central API with durable storage (candidate: SQLite), essential abuse controls, same-origin HTTPS behind a reverse proxy, backups and restart-safe deployment. The new online score list would live on the author's server. Optional Android integration and importing existing local scores are **separate decisions**.
+- **Unresolved choices:** Exact URL, leaderboard size/retention, importing local score histories, abuse policy and whether native Android apps should submit to the public server. No accounts, seasons, chat or additional game mechanics are assumed.
+- **Status:** Planning only. No server configuration, publicly reachable instance, database, code changes or external tests are claimed. See [the public-hosting checklist](../ROADMAP.md).
+
 ## 2026-10-27 — Audit evidence reconciliation (not a new creative decision)
 
 **Trap Mode status.** A nine-item Red Trap Button specification was first recorded as *not started*. Babuni.dev then explicitly chose the **10%** chance and immediate loss with earned-score settlement, and approved implementation. Commits from 26 October implemented the red button, passive emission, host metadata and score behavior. “Not started” is no longer a present-tense status; retain it only as a dated earlier milestone.
