@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-10 — Documentation readability
+
+- Rewrote the game introduction around play, LAN hosting, Android distribution, sound and actual verification boundaries. Preserved original creative history and technical records in their existing references; application code was unchanged.
+
 ## 2026-10-27 — Portfolio audit #27 (documentation only)
 
 - Reviewed the current Button Game tree and its preserved 2009 Flash artifact, recovered original-concept documentation, three game/client generations, the Android Kotlin host, the desktop Python host and sound/Trap regressions.
