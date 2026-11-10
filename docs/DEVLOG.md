@@ -18,7 +18,6 @@ The AI translated that requirement into a roadmap for complete score retention a
 
 **Verification:** Documentation diff and relative-link/blob preservation only. This audit did not run tests, compile/sign Android, open the game in a browser, re-create the sharing ZIP, verify a particular recipient's sound, or publicly expose raw private creative conversations. The human's original decisions and corrections remain credited to Babuni.dev; previous AI mistakes remain explicitly recorded.
 
-
 ## 2026-10-26 — Investigating a silent shared desktop session
 
 **Babuni.dev observation.** After receiving a compact, shareable desktop ZIP meant for the creator's nephew, Babuni.dev reported that the session **appeared to have no sound**. The original game relies on its distinctive tap, Quick Strike, bell and special-reveal recordings; a visually playable but silent session is not an acceptable finished share.
