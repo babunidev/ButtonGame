@@ -1,5 +1,12 @@
 # Button Game — Verification and Release Status
 
+## 2026-11-13 — Public server live on babuni.dev
+
+- **Deployment:** Babuni ran `install-on-server.sh prepare` and `enable --allow-deploy-restart` with sudo; `publish.sh --apply` (run by Claude as `babunideploy`) built `origin/main` `8559e95`, passed its tests and uploaded release `20261113-220747-8559e95`. `enable` reported the service healthy on `127.0.0.1:8787`, `nginx -t` passed, one include line added after the Morkahja include, and `/etc/sudoers.d/buttongame-deploy` installed.
+- **External checks from Nobara:** `/Buttongame` and `/buttongame` → 301 `/Buttongame/`; `https://babuni.dev/Buttongame/` and `https://www.babuni.dev/Buttongame/` 200; `game.js` byte-identical to the repository; Ogg and MP3 sounds 200 with correct types; `api/scores` 200 (`{"scores": []}`); invalid POST 400; `AGENTS.md` and the server script 404; one `X-Content-Type-Options` header. Website homepage, `/Morkahja/` and `/Morkahja/api/health` still 200.
+- **Headless Chromium on the live site** (desktop and phone size): no failed requests or page errors, live player list working. No test score was submitted, so the public list starts empty.
+- **Not yet verified:** a real phone scanning the QR code, a real submitted score, iPhone sound, play from two different networks.
+
 ## 2026-11-13 — Public server (local tests only)
 
 - `python3 -m unittest tests/test_public_server.py tests/test_desktop_host.py`: 13 tests pass — best-100 trimming with ties and rank, database holds exactly 100 rows, persistence across restart with all fields incl. Traps, name/number cleaning, base path with and without prefix and redirect, GET/HEAD allowlist (no repository/database files, no `..`), bad bodies, per-IP 429 limit, presence, admin delete.

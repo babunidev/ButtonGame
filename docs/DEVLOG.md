@@ -6,7 +6,7 @@ The next step was letting anyone play: a link and a QR code on babuni.dev that o
 
 Claude built this on top of the existing desktop LAN host rather than changing the game. A new public server stores scores in SQLite and trims to 100 after every run, and it adds the basic protection an internet-facing page needs: cleaned names, request limits and only the game's own files served. The game itself needed three small changes: its score requests became relative so they work under `/Buttongame/`, the list shows 100 places, and after submitting it now says which place the run got, or that it missed the top 100. A build script adds MP3 copies of my sounds, because iPhones can't play the Ogg originals.
 
-The first browser run of the deploy bundle failed: the server looked for the game one folder too high. That was fixed, and then a full one-minute round under `/Buttongame/` saved a score and showed "Saved — #6 of top 100!". The QR code was decoded back to the address to be sure it scans correctly. Nothing is deployed yet; that needs the babuni.dev server.
+The first browser run of the deploy bundle failed: the server looked for the game one folder too high. That was fixed, and then a full one-minute round under `/Buttongame/` saved a score and showed "Saved — #6 of top 100!". The QR code was decoded back to the address to be sure it scans correctly. The same evening the game went live on the babuni.dev server, set up like Morkahja: I ran the two steps that need my password, Claude uploaded the release, and the live checks from outside passed, with the website and Morkahja unaffected.
 
 ## 2026-11-04 — The global leaderboard must never stop at the top 50
 
