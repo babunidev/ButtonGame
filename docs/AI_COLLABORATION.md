@@ -1,5 +1,7 @@
 # Button Game — Human / AI Collaboration Record
 
+Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+
 ## 2026-11-13 — Public server
 
 **Babuni's direction:** the game at babuni.dev/Buttongame, link plus QR code on the website, one shared best-100 list; the website developer embeds it. **Claude's contribution:** server code, tests, build/deploy files, QR code and website module, the small client changes, and these records. Choices Claude made without a specific instruction (ties, per-IP limits, best 100 runs rather than one per name, the "#N" message wording) are listed in D-026 for Babuni's review.
