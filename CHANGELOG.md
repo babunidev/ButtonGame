@@ -7,6 +7,7 @@
 - Added `website/buttongame-qr.svg`, `website/buttongame-qr.png` and `website/buttongame-embed.html` (link "Play Button Game" with QR code below).
 - `game.js` (and Android mirror): API calls are now relative (`api/scores`, `api/presence`) — same result on the Android and desktop hosts, which serve from `/`; client list limit 50 → 100; shows "Saved — #N of top 100!" / "Not in the top 100 this time" when the server reports a rank.
 - Added `tests/test_public_server.py`, also run in CI.
+- Deployed 2026-11-13 to https://babuni.dev/Buttongame/ (release `20261113-220747-8559e95`).
 
 ## 2026-11-10 — Documentation readability
 

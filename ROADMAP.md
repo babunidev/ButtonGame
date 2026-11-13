@@ -1,6 +1,6 @@
 # Button Game — Current Project To-Do
 
-## 2026-11-13 — Public server for babuni.dev/Buttongame: built and locally tested, not deployed
+## 2026-11-13 — Public server for babuni.dev/Buttongame: live
 
 Babuni decided: address **babuni.dev/Buttongame**, a "Play Button Game" link with a QR code below it on the website, and **one all-time list keeping the best 100 runs** (101st and below removed).
 
@@ -9,7 +9,8 @@ Babuni decided: address **babuni.dev/Buttongame**, a "Play Button Game" link wit
 - [x] Deploy bundle with Ogg + MP3 sounds (`server/build-web.sh`), systemd unit, nginx snippet, `install-on-server.sh` (one-time root setup) and `publish.sh` (routine release as `babunideploy`), following the babuni.dev/Morkahja server pattern (`server/README.md`).
 - [x] QR code (decoded back to `https://babuni.dev/Buttongame/`) and website module (`website/`).
 - [x] Hosting identified from the babuni.dev and Morkahja repositories: same Hetzner VPS, nginx site serving `babuni.dev` + `www`, `babunideploy` release uploads; `babuni.dev` apex resolves there and serves HTTPS (checked 2026-11-13).
-- [ ] Babuni runs `install-on-server.sh prepare`, `publish.sh --apply`, `install-on-server.sh enable`; then test and test from two different networks including phones (iPhone sound via MP3 included).
+- [x] Deployed 2026-11-13: Babuni ran `install-on-server.sh prepare` and `enable`; Claude ran `publish.sh --apply` (release `20261113-220747-8559e95`). External checks passed (see docs/QA.md).
+- [ ] Test and test on real phones from two different networks, including a submitted score and iPhone sound (iPhone sound via MP3 included).
 - [ ] Confirm the right to serve the `AREssence.ttf` font and the sounds publicly.
 - [ ] Website developer embeds the module.
 
