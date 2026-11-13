@@ -1,0 +1,26 @@
+# systemd unit for the Button Game public server (installed by install-on-server.sh).
+# Code and game files: /var/www/buttongame/current (release symlink, uploaded by babunideploy).
+# High scores: /var/lib/buttongame/scores.sqlite3 (owned by the buttongame service user).
+[Unit]
+Description=Button Game public server (babuni.dev/Buttongame)
+After=network.target
+
+[Service]
+Type=simple
+User=buttongame
+Group=buttongame
+WorkingDirectory=/var/lib/buttongame
+ExecStart=/usr/bin/python3 /var/www/buttongame/current/buttongame_server.py --db /var/lib/buttongame/scores.sqlite3 serve --bind 127.0.0.1 --port 8787 --web-root /var/www/buttongame/current/www --base-path /Buttongame --trust-proxy
+Restart=on-failure
+RestartSec=3
+StateDirectory=buttongame
+StateDirectoryMode=0750
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ReadWritePaths=/var/lib/buttongame
+
+[Install]
+WantedBy=multi-user.target

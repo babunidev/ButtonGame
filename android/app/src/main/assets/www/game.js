@@ -126,7 +126,7 @@
   const LOCAL_SESSION_KEY = "buttongame_session_v1";
   const LOCAL_MUTE_KEY = "buttongame_muted_v1";
   const MAX_NAME = 16;
-  const MAX_SCORES = 50;
+  const MAX_SCORES = 100;
   // Bell once whenever a NEW qualifying value is reached, not once per lineage.
   const COMBO_BELL_VALUES = { 7: true, 14: true, 21: true, 37: true, 42: true, 73: true };
   const MASTER_VOL = 0.72;
@@ -454,7 +454,7 @@
       apm: currentApmValue(),
       playing: started && !gameOver && !trapEnding,
     };
-    fetch("/api/presence", {
+    fetch("api/presence", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
@@ -1833,7 +1833,7 @@
   }
 
   function loadLeaderboard() {
-    fetch("/api/scores")
+    fetch("api/scores")
       .then(function (res) {
         if (!res.ok) throw new Error("api");
         return res.json();
@@ -1862,7 +1862,7 @@
     submitScoreBtn.disabled = true;
     pushPresence();
 
-    return fetch("/api/scores", {
+    return fetch("api/scores", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(entry),
@@ -1879,6 +1879,11 @@
         });
         scoreStatus.textContent = nativeSupportsStats ? "Saved on host!" :
           "Points on host · host update needed for stats";
+        // The public server keeps only its best runs and reports the placing.
+        if (data && data.maxScores && "rank" in data) {
+          scoreStatus.textContent = data.rank ? "Saved — #" + data.rank + " of top " + data.maxScores + "!" :
+            "Not in the top " + data.maxScores + " this time";
+        }
         scoreForm.hidden = true;
       })
       .catch(function () {

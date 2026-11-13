@@ -1,5 +1,9 @@
 # Button Game — Visual and Interaction Design
 
+## 2026-11-13 — Public leaderboard feedback
+
+After a run is submitted to the public server, the status line reads "Saved — #N of top 100!" or "Not in the top 100 this time"; the Game Over list shows up to 100 entries. The website module (`website/buttongame-embed.html`) is a turquoise "Play Button Game" link with the QR code below it on the game's dark teal background.
+
 ## 2026-10-27 — Status and delivery clarification
 
 The current **Traps** control belongs near the bottom Reaction/APM/replay area, persists through Game Over and cannot be toggled mid-round. The desktop responsive layout places **players left, game center, scores right** when wide, without changing the stacked phone experience. The red button is a **creator-approved, 10%-chance implemented mode**, not a future mockup.

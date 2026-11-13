@@ -1,5 +1,9 @@
 # Button Game — Human / AI Collaboration Record
 
+## 2026-11-13 — Public server
+
+**Babuni's direction:** the game at babuni.dev/Buttongame, link plus QR code on the website, one shared best-100 list; the website developer embeds it. **Claude's contribution:** server code, tests, build/deploy files, QR code and website module, the small client changes, and these records. Choices Claude made without a specific instruction (ties, per-IP limits, best 100 runs rather than one per name, the "#N" message wording) are listed in D-026 for Babuni's review.
+
 ## 2026-10-27 — Sequential portfolio audit #27
 
 **Babuni.dev direction:** Continue the repository-by-repository documentation audit, preserving original 2009 game authorship, recovered creative ideas, alternative directions, decisions, implementation and verification. The creator has already supplied historic dialogue for a publication-safe [creative origins](CREATIVE_ORIGINS.md) synthesis; that is not permission to publish a private transcript.

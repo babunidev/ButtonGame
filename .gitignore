@@ -10,3 +10,4 @@ dist/*.apk
 !dist/.gitkeep
 logs/
 .local-data/
+dist/buttongame-server/

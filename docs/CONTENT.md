@@ -1,5 +1,9 @@
 # Button Game — Portfolio Content and Publication Outline
 
+## 2026-11-13 — Public page assets
+
+The public server bundle serves `AREssence.ttf`, the button art and the ten sounds (plus MP3 copies made at build time, not tracked in Git). Public hosting is redistribution: confirm the font licence before launch. The website module and QR code live in `website/`. Player names on the public list are chosen by players and moderated with `delete-score`.
+
 ## 2026-10-27 — What is actually tracked versus delivered
 
 The Git tree preserves [Game.swf](../Game.swf) and [Game.html](../Game.html) as the Flash-era artifact; the [early ChatGPT remake](../ChatGPT%20Remake/README.md) is not the current version. Active assets include the approved [Button Game logo](../ButtonGameLogo.png), button SVG, imagery and the **ten original Ogg sounds**, replicated in [browser assets](../assets/sfx/) and [Android assets](../android/app/src/main/assets/www/assets/sfx/).

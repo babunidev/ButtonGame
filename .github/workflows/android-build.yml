@@ -78,7 +78,7 @@ jobs:
 
       - name: Test desktop LAN host scoring and presence
         working-directory: .
-        run: python3 -m unittest discover -s tests -p test_desktop_host.py
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
 
       - name: Test live guest-to-host leaderboard refresh
         working-directory: .

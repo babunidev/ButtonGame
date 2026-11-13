@@ -1,0 +1,42 @@
+<!doctype html>
+<!--
+  Button Game — website module for babuni.dev
+  Copy everything between the "MODULE START" and "MODULE END" comments into the
+  page. Upload buttongame-qr.svg next to it (or change the img src). The
+  styles are scoped to .bg-play so they don't affect the rest of the site.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Button Game module preview</title>
+  <style>body { margin: 0; padding: 32px 16px; background: #f4f4f4; font-family: system-ui, sans-serif; }</style>
+</head>
+<body>
+
+<!-- MODULE START -->
+<style>
+  .bg-play { box-sizing: border-box; max-width: 300px; margin: 0 auto; padding: 22px 20px 20px;
+    border-radius: 16px; background: #071518; color: #c8e8e8; text-align: center;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .bg-play * { box-sizing: border-box; }
+  .bg-play__link { display: inline-block; padding: 12px 22px; border-radius: 999px;
+    background: #2ec4c4; color: #041013; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+  .bg-play__link:hover, .bg-play__link:focus-visible { background: #5fe0e0; }
+  .bg-play__link:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .bg-play__qr { display: block; width: 180px; height: 180px; margin: 18px auto 10px;
+    padding: 8px; border-radius: 10px; background: #fff; }
+  .bg-play__hint { margin: 0; font-size: 0.85rem; line-height: 1.4; opacity: 0.85; }
+</style>
+<div class="bg-play">
+  <a class="bg-play__link" href="https://babuni.dev/Buttongame/">Play Button Game</a>
+  <a href="https://babuni.dev/Buttongame/" aria-label="Play Button Game">
+    <img class="bg-play__qr" src="buttongame-qr.svg" width="180" height="180"
+         alt="QR code to play Button Game at babuni.dev/Buttongame">
+  </a>
+  <p class="bg-play__hint">Scan with your phone to join the live game and the top-100 high score list.</p>
+</div>
+<!-- MODULE END -->
+
+</body>
+</html>
