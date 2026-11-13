@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-13 — Reaction and APM in the High scores panel
+
+- `game.js`, `index.html` (and Android mirror): each row of the top-5 High scores panel now shows the run's average reaction time and APM (`258 ms · 214 APM`, `—` when not recorded) next to the name and points. Session time stays only in the full Game Over list.
+- Phone/stacked layout: one line per run. Wide-screen right-hand column: stats on a second line under the name, so points are not cut off.
+
 ## 2026-11-13 — Public server for babuni.dev/Buttongame
 
 - Added `server/buttongame_server.py`: serves the game and `/api/scores`, `/api/presence` under `/Buttongame/` (with or without the proxy stripping the prefix); SQLite leaderboard keeping only the best 100 (ties: earlier run first); returns the new run's `rank`; cleans names, bounds numbers, limits body size and per-IP request rate; serves only `index.html`, `game.js` and `assets/`; `list-scores` / `delete-score` admin commands.

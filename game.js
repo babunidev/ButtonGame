@@ -1791,10 +1791,15 @@
       name.className = "preview-name";
       name.textContent = (i + 1) + ". " + record.name;
       if (record.trapsEnabled) appendTrapBadge(name);
+      // Babuni asked to see reaction and APM here too (not time).
+      const stats = document.createElement("span");
+      stats.className = "preview-stats";
+      stats.textContent = (record.reactionMs ? record.reactionMs + " ms" : "—") +
+        " · " + (record.apm ? record.apm + " APM" : "—");
       const points = document.createElement("span");
       points.className = "preview-points";
       points.textContent = record.score + " pts";
-      row.append(name, points);
+      row.append(name, stats, points);
       list.appendChild(row);
     }
     previewListEl.replaceChildren(...list.children);

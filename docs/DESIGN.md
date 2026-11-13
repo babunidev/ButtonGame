@@ -1,5 +1,9 @@
 # Button Game — Visual and Interaction Design
 
+## 2026-11-13 — Reaction and APM in the High scores panel
+
+The High scores panel (under the game on phones, right-hand column on wide screens) now shows each run's reaction time and APM beside the points, so a player sees how fast a score was made before starting. Remaining time is left out because it is always zero at Game Over; session time stays in the full Game Over list. The Traps icon is unchanged.
+
 ## 2026-11-13 — Public leaderboard feedback
 
 After a run is submitted to the public server, the status line reads "Saved — #N of top 100!" or "Not in the top 100 this time"; the Game Over list shows up to 100 entries. The website module (`website/buttongame-embed.html`) is a turquoise "Play Button Game" link with the QR code below it on the game's dark teal background.

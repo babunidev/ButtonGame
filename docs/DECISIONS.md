@@ -1,5 +1,11 @@
 # Button Game — Decisions and Open Questions
 
+## D-027 — Reaction and APM in the High scores panel (decided 2026-11-13)
+
+- **Babuni's decision:** The High scores panel should show points, reaction time and APM, and the Traps marker; not time ("the timer is empty").
+- **AI implementation choices (reviewable):** compact `258 ms · 214 APM` wording; one line on phones, second line under the name in the narrow desktop column; `—` for runs without stats.
+- **Implementation:** `game.js` `renderScorePreview`, `index.html` `.preview-stats`.
+
 ## D-026 — babuni.dev/Buttongame with a best-100 leaderboard (decided 2026-11-13)
 
 - **Babuni's decision:** Host the game at **babuni.dev/Buttongame**. The website shows a "Play Button Game" link with the QR code next to or under it; link and QR open the same live game. One shared all-time list keeps the **best 100**; place 101 and lower are removed. The website developer will place the module.

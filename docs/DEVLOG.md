@@ -1,5 +1,9 @@
 # Button Game — Curated Development Journal
 
+## 2026-11-13 — Seeing how fast a high score was made
+
+Once the game was live I expected the high-score list to show reaction time and APM, not only points. Claude checked that the live game was the newest build and had everything the Android and desktop versions had. The stats were already being saved; only the full Game Over list showed them. I asked for them in the High scores panel too, leaving out time because the timer is always empty by then.
+
 ## 2026-11-13 — Putting the game on babuni.dev
 
 The next step was letting anyone play: a link and a QR code on babuni.dev that open the live game at **babuni.dev/Buttongame**, so a phone can scan and join, and everyone lands on the same high-score list. That list keeps the best 100 runs; anything below place 100 drops out. This replaces my plan from 4 November to keep every result in an endless scrolling list.

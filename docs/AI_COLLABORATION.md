@@ -2,6 +2,10 @@
 
 Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
 
+## 2026-11-13 — Reaction and APM in the High scores panel
+
+**Babuni's direction:** asked why the high-score list showed no reaction or APM and whether the live site had lost features from the Android and desktop builds; then approved showing reaction and APM (not time) in the panel. **Claude (Claude Code, Claude Opus 5.5):** compared every shipped build with the live files, found nothing missing, made the panel change, tested it with mock data and published it.
+
 ## 2026-11-13 — Public server
 
 **Babuni's direction:** the game at babuni.dev/Buttongame, link plus QR code on the website, one shared best-100 list; the website developer embeds it. **Claude's contribution:** server code, tests, build/deploy files, QR code and website module, the small client changes, and these records. Choices Claude made without a specific instruction (ties, per-IP limits, best 100 runs rather than one per name, the "#N" message wording) are listed in D-026 for Babuni's review.

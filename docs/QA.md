@@ -1,5 +1,12 @@
 # Button Game — Verification and Release Status
 
+## 2026-11-13 — Reaction and APM in the High scores panel
+
+- `node --check game.js`; `tests/*.cjs` (live leaderboard refresh, sound fallback, Trap Mode) pass; `python3 -m unittest discover -s tests` 13 tests OK; `game.js` and `index.html` byte-equal to the Android mirror after `scripts/sync-www.sh`.
+- Headless Chromium against a local `buttongame_server.py` with five **mock** scores (one with Traps, one without stats): wide 1400 px column shows stats on a second line with points fully visible; 1049 px stacked layout shows one line per run. Screenshots in `~/Pictures/Development Screenshots/Buttongame/2026-11-13-highscores-with-reaction-apm-*.png`.
+- Before this change, every shipped build (1.0.2 Trap APK, 1.0.3 beta APK and Desktop-Web ZIP, standalone `ButtonGame1.0.3.zip`) was compared with live `game.js`: live contained all of their features plus the public-server changes; the panel had always shown points only.
+- **Not verified:** a real phone, and the Android app (no APK built).
+
 ## 2026-11-13 — Public server live on babuni.dev
 
 - **Deployment:** Babuni ran `install-on-server.sh prepare` and `enable --allow-deploy-restart` with sudo; `publish.sh --apply` (run by Claude as `babunideploy`) built `origin/main` `8559e95`, passed its tests and uploaded release `20261113-220747-8559e95`. `enable` reported the service healthy on `127.0.0.1:8787`, `nginx -t` passed, one include line added after the Morkahja include, and `/etc/sudoers.d/buttongame-deploy` installed.

@@ -627,9 +627,18 @@
       line-height: 1.35;
     }
     #live-leaderboard .preview-name {
+      flex: 1 1 auto;
+      min-width: 0;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+    #live-leaderboard .preview-stats {
+      color: #7fb8ba;
+      font-size: 0.72rem;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      flex: none;
     }
     #live-leaderboard .preview-points {
       color: #d3ffff;
@@ -1003,6 +1012,10 @@
         pointer-events: auto;
       }
       #live-leaderboard h2 { text-align: left; }
+      /* The sidebar is narrow: reaction and APM go on a second line. */
+      #live-leaderboard li { flex-wrap: wrap; row-gap: 0; }
+      #live-leaderboard .preview-name { flex: 1 1 0; }
+      #live-leaderboard .preview-stats { order: 3; flex: 1 0 100%; padding-left: 1.1em; }
     }
   </style>
 </head>
