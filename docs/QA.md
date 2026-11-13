@@ -5,7 +5,8 @@
 - `node --check game.js`; `tests/*.cjs` (live leaderboard refresh, sound fallback, Trap Mode) pass; `python3 -m unittest discover -s tests` 13 tests OK; `game.js` and `index.html` byte-equal to the Android mirror after `scripts/sync-www.sh`.
 - Headless Chromium against a local `buttongame_server.py` with five **mock** scores (one with Traps, one without stats): wide 1400 px column shows stats on a second line with points fully visible; 1049 px stacked layout shows one line per run. Screenshots in `~/Pictures/Development Screenshots/Buttongame/2026-11-13-highscores-with-reaction-apm-*.png`.
 - Before this change, every shipped build (1.0.2 Trap APK, 1.0.3 beta APK and Desktop-Web ZIP, standalone `ButtonGame1.0.3.zip`) was compared with live `game.js`: live contained all of their features plus the public-server changes; the panel had always shown points only.
-- **Not verified:** a real phone, and the Android app (no APK built).
+- **Babuni, 2026-11-13:** checked the live babuni.dev/Buttongame panel on an Android phone — "works on android phone as it should".
+- **Not verified:** the installed Android app (no APK built with this change).
 
 ## 2026-11-13 — Public server live on babuni.dev
 
