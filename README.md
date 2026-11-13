@@ -66,3 +66,7 @@ The current web source is in `index.html`, `game.js` and `assets/`; Android sour
 CI includes `node --check game.js`, `node tests/live-leaderboard-refresh.cjs`, Android Gradle debug/release builds and asset checks. A passing build is not physical-device validation or a verified signed update.
 
 Read [AGENTS.md](AGENTS.md) and [the documentation standard](docs/DOCUMENTATION.md) before changing behavior or project records. Document what was actually implemented and tested, without attributing Babuni's original ideas to AI assistance.
+
+## License
+
+Original game code is licensed under [MIT](LICENSE). Original sounds, artwork and brand assets are treated separately in [asset rights](ASSET_RIGHTS.md).
