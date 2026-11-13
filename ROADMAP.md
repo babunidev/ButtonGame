@@ -1,6 +1,19 @@
 # Button Game — Current Project To-Do
 
-## Public server with one global high-score leaderboard — proposed, not deployed (4 November 2026)
+## 2026-11-13 — Public server for babuni.dev/Buttongame: built and locally tested, not deployed
+
+Babuni decided: address **babuni.dev/Buttongame**, a "Play Button Game" link with a QR code below it on the website, and **one all-time list keeping the best 100 runs** (101st and below removed).
+
+- [x] Public server with SQLite top-100 leaderboard, live player list, input cleaning, per-IP rate limits, size limits, file allowlist and admin `list-scores`/`delete-score` — `server/buttongame_server.py`, `tests/test_public_server.py`.
+- [x] Game uses relative `api/...` URLs so it works under `/Buttongame/`; shows the 100-entry list and "#N of top 100" / "Not in the top 100" after submitting.
+- [x] Deploy bundle with Ogg + MP3 sounds (`server/build-web.sh`), systemd unit, nginx snippet, `install-on-server.sh` (one-time root setup) and `publish.sh` (routine release as `babunideploy`), following the babuni.dev/Morkahja server pattern (`server/README.md`).
+- [x] QR code (decoded back to `https://babuni.dev/Buttongame/`) and website module (`website/`).
+- [x] Hosting identified from the babuni.dev and Morkahja repositories: same Hetzner VPS, nginx site serving `babuni.dev` + `www`, `babunideploy` release uploads; `babuni.dev` apex resolves there and serves HTTPS (checked 2026-11-13).
+- [ ] Babuni runs `install-on-server.sh prepare`, `publish.sh --apply`, `install-on-server.sh enable`; then test and test from two different networks including phones (iPhone sound via MP3 included).
+- [ ] Confirm the right to serve the `AREssence.ttf` font and the sounds publicly.
+- [ ] Website developer embeds the module.
+
+## Public server with one global high-score leaderboard — proposed, not deployed (4 November 2026, superseded above)
 
 **Babuni's requested outcome:** Run Button Game on their own internet-accessible server so every visitor can play the same HTML5 game and all online players contribute to **one central high-score leaderboard**. Reuse the current browser game; the Android and desktop local-host score files are separate today and are **not** automatically global. This section is a plan only; no server has been configured.
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-13 — Public server for babuni.dev/Buttongame
+
+- Added `server/buttongame_server.py`: serves the game and `/api/scores`, `/api/presence` under `/Buttongame/` (with or without the proxy stripping the prefix); SQLite leaderboard keeping only the best 100 (ties: earlier run first); returns the new run's `rank`; cleans names, bounds numbers, limits body size and per-IP request rate; serves only `index.html`, `game.js` and `assets/`; `list-scores` / `delete-score` admin commands.
+- Added `server/build-web.sh` (upload folder with Ogg + ffmpeg-made MP3 sounds), `server/buttongame.service`, `server/nginx-buttongame-locations.conf`, `server/install-on-server.sh`, `server/publish.sh` and `server/README.md`, matching the babuni.dev server layout.
+- Added `website/buttongame-qr.svg`, `website/buttongame-qr.png` and `website/buttongame-embed.html` (link "Play Button Game" with QR code below).
+- `game.js` (and Android mirror): API calls are now relative (`api/scores`, `api/presence`) — same result on the Android and desktop hosts, which serve from `/`; client list limit 50 → 100; shows "Saved — #N of top 100!" / "Not in the top 100 this time" when the server reports a rank.
+- Added `tests/test_public_server.py`, also run in CI.
+
 ## 2026-11-10 — Documentation readability
 
 - Rewrote the game introduction around play, LAN hosting, Android distribution, sound and actual verification boundaries. Preserved original creative history and technical records in their existing references; application code was unchanged.

@@ -1,5 +1,12 @@
 # Button Game — Decisions and Open Questions
 
+## D-026 — babuni.dev/Buttongame with a best-100 leaderboard (decided 2026-11-13)
+
+- **Babuni's decision:** Host the game at **babuni.dev/Buttongame**. The website shows a "Play Button Game" link with the QR code next to or under it; link and QR open the same live game. One shared all-time list keeps the **best 100**; place 101 and lower are removed. The website developer will place the module.
+- **AI implementation choices (reviewable):** Python standard-library server + SQLite behind the site's HTTPS reverse proxy on `127.0.0.1:8787`; ties keep the earlier run; 100 = best 100 *runs* (one person may hold several places, as on the LAN hosts) — open question whether Babuni wants one entry per name; per-IP rate limits; no accounts, so scores remain fakeable and are moderated with `delete-score`.
+- **Still open:** hosting details of babuni.dev, font/sound redistribution rights, whether Android apps should later submit to the public list.
+- Resolves the address question of D-025 and **replaces** its 4 November refinement (keep every result in an endless scrollable list): Babuni's 13 November instruction is to save only the best 100.
+
 ## D-025 — One public Button Game leaderboard on the creator's own server (requested, planning)
 
 - **Creative direction (4 November 2026):** Babuni wants a version of Button Game hosted on their own server, with **one shared high-score list for everyone**, and asks whether it can reuse the desktop game.

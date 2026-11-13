@@ -19,6 +19,7 @@ The full behavior is in [the game concept](CONCEPT.md) and [Trap Mode specificat
 | **Browser** | The main game is in `index.html` and `game.js`. |
 | **Android** | The app runs the game in a WebView and can host other players over local Wi-Fi. Guests join using a displayed address or QR code. |
 | **Desktop LAN** | A small Python server hosts the browser game and the score/presence API for other devices on the same network. |
+| **Online** | `https://babuni.dev/Buttongame/` (link or QR code): one shared list of the best 100 runs. Server, deployment and website module: [server/README.md](server/README.md). |
 
 ### Run the desktop LAN host
 

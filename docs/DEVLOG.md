@@ -1,5 +1,13 @@
 # Button Game — Curated Development Journal
 
+## 2026-11-13 — Putting the game on babuni.dev
+
+The next step was letting anyone play: a link and a QR code on babuni.dev that open the live game at **babuni.dev/Buttongame**, so a phone can scan and join, and everyone lands on the same high-score list. That list keeps the best 100 runs; anything below place 100 drops out. This replaces my plan from 4 November to keep every result in an endless scrolling list.
+
+Claude built this on top of the existing desktop LAN host rather than changing the game. A new public server stores scores in SQLite and trims to 100 after every run, and it adds the basic protection an internet-facing page needs: cleaned names, request limits and only the game's own files served. The game itself needed three small changes: its score requests became relative so they work under `/Buttongame/`, the list shows 100 places, and after submitting it now says which place the run got, or that it missed the top 100. A build script adds MP3 copies of my sounds, because iPhones can't play the Ogg originals.
+
+The first browser run of the deploy bundle failed: the server looked for the game one folder too high. That was fixed, and then a full one-minute round under `/Buttongame/` saved a score and showed "Saved — #6 of top 100!". The QR code was decoded back to the address to be sure it scans correctly. Nothing is deployed yet; that needs the babuni.dev server.
+
 ## 2026-11-04 — The global leaderboard must never stop at the top 50
 
 For a publicly hosted Button Game, the initial plan mentioned an open question about leaderboard size. The direction is now clear: the leaderboard should keep **every player's submitted results** in one shared, all-time ranking and remain scrollable to the very end, rather than hiding or discarding everyone below the top 50. Names, points, Reaction, APM, game duration and the red Traps marker all remain visible with the appropriate score.

@@ -1,5 +1,15 @@
 # Button Game — Verification and Release Status
 
+## 2026-11-13 — Public server (local tests only)
+
+- `python3 -m unittest tests/test_public_server.py tests/test_desktop_host.py`: 13 tests pass — best-100 trimming with ties and rank, database holds exactly 100 rows, persistence across restart with all fields incl. Traps, name/number cleaning, base path with and without prefix and redirect, GET/HEAD allowlist (no repository/database files, no `..`), bad bodies, per-IP 429 limit, presence, admin delete.
+- `node tests/*.cjs` (3 regressions) pass; `node --check game.js` passes; Android mirror `game.js`/`index.html` byte-equal after `scripts/sync-www.sh`.
+- Headless Chromium against the built bundle (`dist/buttongame-server`, mock scores) at desktop and phone size: `/Buttongame` redirects, no failed requests or page errors, top scores and live players render; one real round played and submitted showed "Saved — #6 of top 100!". MP3 served as `audio/mpeg`. Screenshots in Babuni's local development-screenshot collection.
+- QR code PNG decoded with OpenCV → `https://babuni.dev/Buttongame/`.
+- nginx 1.27 (podman) with a copy of babuni.dev's site template plus the include inserted by the `install-on-server.sh` sed: `nginx -t` OK; `/Buttongame`, `/buttongame`, `/buttongame/` → 301 `/Buttongame/` (query kept); game, `game.js`, MP3, API 200; `AGENTS.md` 404; website `/` 200 and unknown page 404; single `X-Content-Type-Options`/`Referrer-Policy`/`Cache-Control` headers; 20 KB POST → 413; switching the `current` symlink served the new `game.js` without restart; per-IP limit through the proxy gave 429 after 20 posts.
+- Not run: `install-on-server.sh` itself (needs root and systemd on the server) and `publish.sh` (no access; the agent's read-only SSH check was declined by the permission system).
+- **Not verified:** real deployment, HTTPS proxy, other networks, iPhone sound, load from many players.
+
 ## Desktop sound investigation
 
 The shipped 1.0.3 share-with-nephew ZIP contained all ten expected Ogg files. Each was detected as valid Vorbis media; missing files are **not** established as the cause of the user's silent session. New audio regression verifies fallback to the native audio element if a Web Audio buffer/context is unavailable, choosing MP3 for browsers lacking Ogg support and respecting mute. The refreshed desktop ZIP includes matching Ogg and MP3 tracks and a dedicated audio help file.

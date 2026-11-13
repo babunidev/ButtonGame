@@ -1,5 +1,9 @@
 # Button Game — Creative Concept
 
+## 2026-11-13 — Public play on babuni.dev
+
+Babuni approved a public version at **babuni.dev/Buttongame**, reached by link or QR code, with one shared list of the best 100 runs. Gameplay is unchanged; only the score message after submitting tells the player their place in the top 100.
+
 ## 2026-10-27 — Creative continuity across editions
 
 The original 2009 Flash Button Game, the intermediate ChatGPT remake, the current HTML5 toy and its Android/desktop shared-score hosts are distinct stages—not a single 2009 feature set. The creator's turquoise four-hole jacket button, physical number combination, visible score collection, unusual 21→42 and 37→73 events, and later Red Trap rules demonstrate an evolving authored experience.
