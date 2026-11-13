@@ -313,3 +313,8 @@
 
 - Added HTML5 gameplay, animated floating score combinations, sounds and bonuses.
 - Added Android Wi-Fi hosting, QR-code browser joining, leaderboard, and per-player live score/time/reaction/APM display.
+
+## 2026-11-13 — License and rights
+
+- Established MIT for original game code, with art/audio separately treated and updated repository documentation to explain the permission boundary.
+- Preserved third-party authorship and external assets' separate terms. No gameplay or runtime verification is claimed.
