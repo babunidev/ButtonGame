@@ -179,3 +179,7 @@ These are editorial corrections distinguishing proposals, implemented changes an
 ## Recording a new decision
 
 Use: **ID — date — Babuni.dev request and reasons — AI suggestions and alternatives — accepted/rejected/deferred (with explicit evidence) — implementation file/commit — verification and uncertainty**. If no user approval occurred, record `pending`, not `accepted`.
+
+## 2026-11-13 — Licensing decision
+
+To make the reuse terms explicit, I approved MIT for original game software, with original sounds, art and branding separately reserved. This applies only to material for which the relevant rights can be granted; third-party contributors keep their own credits and licenses. AI assistance committed the license notice and updated project-facing documentation. This was a legal/documentation change, not a runtime feature or test.
