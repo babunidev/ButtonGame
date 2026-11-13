@@ -212,3 +212,7 @@ The original archived Button Game conversation could not be opened during the **
 ## Provenance note
 
 This file is an **editorial index and continuation**, not a verbatim reproduction of inaccessible archived ChatGPT conversations. Babuni.dev retains authorship of the direction and decisions; AI implementation and retrospective summarization are distinguished. Future dated entries should include requested change, alternate approaches, acceptance/rejection, file and commit pointers, actual verification and unresolved problems.
+
+## 2026-11-13 — Giving the repository clear permissions
+
+Public source alone did not explain what others could reuse, so I approved MIT for the original game code while treating artwork and audio separately. AI assistance added the license and brought the project notes into agreement, without changing how the application runs. Other people's content retains its own terms.
