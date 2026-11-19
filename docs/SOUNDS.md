@@ -27,4 +27,4 @@ The custom files are referenced by `game.js` at relative paths inside `assets/sf
 
 Do not remove or transcode Babuni.dev-supplied originals without approval.
 
-See [ROADMAP.md](ROADMAP.md) and [docs/QA.md](docs/QA.md).
+See [ROADMAP.md](ROADMAP.md) and [docs/QA.md](QA.md).

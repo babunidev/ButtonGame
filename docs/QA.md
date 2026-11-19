@@ -41,7 +41,7 @@ A Button Game APK is only a verified **in-place update** when it has the same `c
 
 Direct certificate-byte comparison of the **previous 1.0.2-beta debug APK** and newly compiled **1.0.3-beta debug APK** found **different SHA-256 signing certificate fingerprints**. An in-place debug APK update between these specific versions is therefore not possible. A newly compiled APK being correct does not justify uninstalling a working host and losing scores without a backup.
 
-Added `scripts/transfer-host-scores.py` to export the host's existing `GET /api/scores` list and restore it via sequential `POST /api/scores` submissions on an empty new host. A local mock HTTP server test exercised backup and restore and confirmed score + trap metadata conservation. This developer utility was **not** tested against a real phone yet; [INSTALL.md](../INSTALL.md) gives protective step-by-step instructions.
+Added `scripts/transfer-host-scores.py` to export the host's existing `GET /api/scores` list and restore it via sequential `POST /api/scores` submissions on an empty new host. A local mock HTTP server test exercised backup and restore and confirmed score + trap metadata conservation. This developer utility was **not** tested against a real phone yet; [INSTALL.md](INSTALL.md) gives protective step-by-step instructions.
 
 ## Desktop Wi-Fi host — implementation and test scope
 

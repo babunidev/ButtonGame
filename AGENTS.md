@@ -6,7 +6,7 @@
 - Distinguish source tree from private sharing ZIP: the repository tracks ten **Ogg** clips, while a separately prepared desktop ZIP reportedly contained ten **MP3** copies. The current `playMediaFallback` chooses an MP3 name on clients reporting no Ogg/Vorbis support. Do not claim raw-checkout codec completeness.
 - For Wi-Fi scores, `python3 -m http.server` is static-only. Use `scripts/serve-desktop.py` for a desktop-hosted score/presence API. Its ledger and Android-hosted saved scores are intentionally separate.
 - CI compilation/debug APKs aren't proof of an update APK. The installed certificate and higher versionCode must match; do not expose or commit a private signing key.
-- Do not rewrite or collapse [root DEVLOG](DEVLOG.md), [curated journal](docs/DEVLOG.md), [creative origins](docs/CREATIVE_ORIGINS.md) or rejected approaches. Preserve Babuni's authorship and publication-safe human–AI record.
+- Do not rewrite the [development journal](docs/DEVLOG.md), including the original entries merged from the former root DEVLOG, the [creative origins](docs/CREATIVE_ORIGINS.md) or rejected approaches. Preserve Babuni's authorship and publication-safe human–AI record.
 - This audit performs **source and docs inspection only**, not browser/Android tests or an APK/ZIP release.
 
 
@@ -33,7 +33,7 @@ This is a Babuni-directed artwork and a software project. Preserve the user's au
 
 - Check GitHub `main` state and open files/commits before describing anything as implemented.
 - Distinguish code present, CI-tested, locally verified, device-verified, signed and actually delivered.
-- Review [CONCEPT.md](CONCEPT.md), [ROADMAP.md](ROADMAP.md), [docs/DECISIONS.md](docs/DECISIONS.md) and relevant [docs/DEVLOG.md](docs/DEVLOG.md) / legacy [DEVLOG.md](DEVLOG.md).
+- Review [docs/CONCEPT.md](docs/CONCEPT.md), [docs/ROADMAP.md](docs/ROADMAP.md), [docs/DECISIONS.md](docs/DECISIONS.md) and relevant [docs/DEVLOG.md](docs/DEVLOG.md) entries.
 - Avoid a false "fixed" claim solely because an API route, fallback, or successful APK compile exists.
 
 ## Source changes
@@ -56,10 +56,10 @@ This is a Babuni-directed artwork and a software project. Preserve the user's au
 For substantive code or design work, update the relevant documents in the same reviewable change:
 
 - `README.md`: overview and current status.
-- `CONCEPT.md`: creative purpose and explicitly approved feature boundaries.
-- `ROADMAP.md`: active tasks and their evidence-backed statuses.
+- `docs/CONCEPT.md`: creative purpose and explicitly approved feature boundaries.
+- `docs/ROADMAP.md`: active tasks and their evidence-backed statuses.
 - `CHANGELOG.md`: changes actually implemented.
-- `docs/DEVLOG.md`: narrative of Babuni's intent, AI proposal, iteration, failures and verification; the original `DEVLOG.md` is retained.
+- `docs/DEVLOG.md`: narrative of Babuni's intent, AI proposal, iteration, failures and verification. It is the project's only development log; the original root log's entries were merged into it unchanged on 2026-11-19.
 - `docs/DECISIONS.md`: accepted/rejected/deferred choices, with provenance.
 - `docs/DESIGN.md` and `docs/ARCHITECTURE.md`: observable behavioral/technical changes.
 - `docs/CONTENT.md` and `docs/AI_COLLABORATION.md`: publication-safe portfolio and attribution.
@@ -82,3 +82,7 @@ Use **Babuni** as the named human creative in metadata and public-facing documen
 ## Repository-local documentation standard
 
 Follow [the documentation standard](docs/DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution. These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
+
+## Repository layout
+
+The repository root holds only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md` (plus any additional license files). All other documentation lives in `docs/`; put new documents there.

@@ -84,7 +84,7 @@ The 60-second `deadline` starts on the first tap. State updates include target/f
 - All three custom OGGs were added under root `sfx/` at `d5ce766`; source patch `2fa4539` mirrored those exact original bytes into both `assets/sfx/` and the Android web bundle, and changed synchronization to use canonical `sfx/`.
 - Android Gradle config: Java 17, compile/target SDK 35, min SDK 26, `applicationId = com.babunigaming.buttongame`, `versionCode = 2` / `versionName = 1.0.1-beta`.
 - CI: `.github/workflows/android-build.yml` synchronizes web and original sounds, checks the source mirror, runs Node syntax/leaderboard regression and Gradle `assembleDebug assembleRelease`, then verifies all 10 OGGs exist byte-identically inside both APKs. It watches `sfx/**`.
-- CI release output is unsigned. A release-signed upgrade requires Babuni.dev's original certificate; credentials are not part of the repository. See [INSTALL.md](../INSTALL.md).
+- CI release output is unsigned. A release-signed upgrade requires Babuni.dev's original certificate; credentials are not part of the repository. See [INSTALL.md](INSTALL.md).
 
 ## Historical architecture evolution and failed shortcuts
 
@@ -113,4 +113,4 @@ High-score persistence must eventually record whether Traps was enabled for each
 - Direct score-file writes risk interruption. Presence IDs are client-supplied and transient.
 - `WebView.setWebContentsDebuggingEnabled(true)` is currently unconditionally enabled; restrict to development builds.
 
-These are **source-review observations, not reproduced bugs or active work requirements**. Babuni.dev reports no server startup or port conflicts and explicitly prefers simple, working software over speculative hardening. Only revisit if an actual user-observed issue merits work. Release gates and Babuni.dev-confirmed device QA are tracked in [ROADMAP.md](../ROADMAP.md) and [QA.md](QA.md).
+These are **source-review observations, not reproduced bugs or active work requirements**. Babuni.dev reports no server startup or port conflicts and explicitly prefers simple, working software over speculative hardening. Only revisit if an actual user-observed issue merits work. Release gates and Babuni.dev-confirmed device QA are tracked in [ROADMAP.md](ROADMAP.md) and [QA.md](QA.md).

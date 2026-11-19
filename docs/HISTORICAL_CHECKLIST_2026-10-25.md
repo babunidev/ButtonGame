@@ -80,7 +80,7 @@ The three OGGs have since been committed to root `sfx/`; packaged web/Android as
 - Time bonuses changed from fixed +3 s to **7→2 s; 14→3 s; 42→5 s; 73→4 s**.
 - Recommendations added in subsequent AI to-do lists, such as publishing via GitHub Releases, are **not original checklist tasks**.
 
-**Related current documents:** [Concept](../CONCEPT.md), [Roadmap](../ROADMAP.md), [Design](DESIGN.md), [Decisions](DECISIONS.md), [Development journal](DEVLOG.md).
+**Related current documents:** [Concept](CONCEPT.md), [Roadmap](ROADMAP.md), [Design](DESIGN.md), [Decisions](DECISIONS.md), [Development journal](DEVLOG.md).
 
 **Historical integrity:** This copy contains the seven recovered categories with their task wording preserved. Commentary and later corrections are explicitly separated.
 

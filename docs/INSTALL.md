@@ -4,7 +4,7 @@
 
 Android updates require the **same application ID**, **higher versionCode**, and **the same signing certificate as the currently installed app**. Earlier Button Game upgrades worked because we reused Babuni.dev's original signing key, `Buttongame-signing-keystore.p12`. GitHub Actions' ordinary debug builds generate new keys; those debug APKs **cannot reliably replace earlier installs**.
 
-**Current limitation:** The original P12 private key is not available in this workspace. Nor is the temporary private key from the 1.0.2-beta debug APK. If the phone currently runs that debug build, the original signing certificate **cannot** directly upgrade it. Android offers no safe bypass. Preserve scores using [scripts/transfer-host-scores.py](scripts/transfer-host-scores.py) before a **one-time** reinstall with the permanent original signer, then all subsequent higher-version releases using that signer can update normally.
+**Current limitation:** The original P12 private key is not available in this workspace. Nor is the temporary private key from the 1.0.2-beta debug APK. If the phone currently runs that debug build, the original signing certificate **cannot** directly upgrade it. Android offers no safe bypass. Preserve scores using [scripts/transfer-host-scores.py](../scripts/transfer-host-scores.py) before a **one-time** reinstall with the permanent original signer, then all subsequent higher-version releases using that signer can update normally.
 
 **Safe local update signing:** Obtain the latest **unsigned release APK**, your **original private P12**, and a reference APK signed with the same certificate as the app currently on the phone. With the Android SDK's `aapt`, `zipalign` and `apksigner` on PATH, run:
 
@@ -140,4 +140,4 @@ apksigner verify --verbose --print-certs ButtonGame-1.0.2-release-signed.apk
 
 ## Verification before distribution
 
-Inspect APK entry list for both `assets/www/game.js` and `assets/www/index.html` **and all ten intended audio OGG files**; confirm native classes, hash and signature. The existing installed app's phone checks have already been completed by Babuni.dev. For the **newly signed version**, a brief installation/launch/audio/Wi-Fi smoke test is enough. Refer to [docs/QA.md](docs/QA.md). A release artifact and successful device check must be recorded in [CHANGELOG.md](CHANGELOG.md) and [docs/DEVLOG.md](docs/DEVLOG.md).
+Inspect APK entry list for both `assets/www/game.js` and `assets/www/index.html` **and all ten intended audio OGG files**; confirm native classes, hash and signature. The existing installed app's phone checks have already been completed by Babuni.dev. For the **newly signed version**, a brief installation/launch/audio/Wi-Fi smoke test is enough. Refer to [docs/QA.md](QA.md). A release artifact and successful device check must be recorded in [CHANGELOG.md](../CHANGELOG.md) and [docs/DEVLOG.md](DEVLOG.md).

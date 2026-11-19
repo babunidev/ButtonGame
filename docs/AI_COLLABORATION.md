@@ -81,7 +81,7 @@ Publish an edited account of collaboration, never a raw private transcript. Do n
 ## Maintenance links
 
 - Current constraints: [AGENTS.md](../AGENTS.md)
-- Chronology: [root DEVLOG.md](../DEVLOG.md), [docs/DEVLOG.md](DEVLOG.md), [CHANGELOG.md](../CHANGELOG.md)
+- Chronology: [development journal](DEVLOG.md), [CHANGELOG.md](../CHANGELOG.md)
 - Creative decisions: [docs/DECISIONS.md](DECISIONS.md)
 - Verification: [docs/QA.md](QA.md)
 

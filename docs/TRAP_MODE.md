@@ -34,7 +34,7 @@ The distinction is important: **the game ends at once, but existing earned point
 ## Boundaries, unknowns and verification
 
 - All nine requirements are **implemented in GitHub source**. This does not mean that a new APK has been signed, installed or physically tested.
-- Babuni.dev subsequently authorized implementation of the whole feature and requested an updated normal-package APK; that release is tracked separately in [ROADMAP.md](../ROADMAP.md).
+- Babuni.dev subsequently authorized implementation of the whole feature and requested an updated normal-package APK; that release is tracked separately in [ROADMAP.md](ROADMAP.md).
 - This specification **resolves** earlier documentation gaps about trap lifetime, retirement, spawn/rotation/destruction parity, passive point emergence and leaderboard icon placement.
 - **Now decided:** trap replacement probability is **10% of eligible normal spawns when enabled**, and **already-earned pending points complete score fusion** after instant Game Over.
 - **Implementation interpretation:** The pre-start button remains normal; 10% random replacement applies to subsequent spawns. Untouched red buttons begin the existing fading and shattering cycle automatically after the 320 ms spawn animation, since ordinary buttons begin fading only after a tap. Pressing red displays Game Over instantly, freezes play duration and stops further passive emissions, while previously earned score transfers continue; the final high-score form waits for score settlement. The pre-game Traps checkbox returns on replay with its within-page selection retained, without new device storage. No guaranteed spacing between trap spawns is introduced; pending time cannot reverse a red-button loss.

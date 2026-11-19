@@ -21,7 +21,7 @@
 - **Creative refinement (4 November 2026):** Babuni explicitly requires **all players who ever played** to remain visible in **one scrollable, all-time high-score list**, without a top-50 cutoff. Each displayed result retains **name, points, Reaction, APM, duration, and the Traps marker**. This replaces the earlier open question about list length. The existing desktop host's 50-entry trim must not be carried into public storage.
 - **AI implementation interpretation (proposed, not approved as a specific design):** Store the full result history; use incremental/paginated loading so the interface can scroll through all ranks without requesting the entire database in one response. Do not conflate a visual page size with deletion/retention of records.
 - **Unresolved choices:** Exact URL, whether repeated results under the same name appear as separate entries, whether names identify distinct players, importing older local score histories, abuse policy, and whether native Android apps should submit to the public server. No accounts, seasons, chat or additional game mechanics are assumed.
-- **Status:** Planning only. No server configuration, publicly reachable instance, database, code changes or external tests are claimed. See [the public-hosting checklist](../ROADMAP.md).
+- **Status:** Planning only. No server configuration, publicly reachable instance, database, code changes or external tests are claimed. See [the public-hosting checklist](ROADMAP.md).
 
 ## 2026-10-27 — Audit evidence reconciliation (not a new creative decision)
 
@@ -62,7 +62,7 @@ These are editorial corrections distinguishing proposals, implemented changes an
 
 **Update — 26 October 2026:** Babuni.dev subsequently authorized full Red Trap Button implementation at **10%** replacement probability, with immediate Game Over and conservation of already-earned pending points. The feature is **implemented in GitHub source**, and the native Android compilation and new trap regression passed in [Actions run 40365295833](https://github.com/babunidev/ButtonGame/actions/runs/40365295833). Any earlier language below saying this mode is not started or not authorized records the **historical status at that time** and is superseded. An Android APK signed with the original release certificate and physical Trap Mode verification remain **pending**. See [the current Red Trap Button specification](TRAP_MODE.md).
 
-**Notation:** Accepted = established Babuni.dev direction or documented decision. Implemented = present in source. Verified = actually checked at the stated level. Proposed = not authorized. Retrospective entries rely on [original DEVLOG](../DEVLOG.md), [CHANGELOG](../CHANGELOG.md), and Babuni.dev-provided 2026-10-26 to-do list, not an invented transcript.
+**Notation:** Accepted = established Babuni.dev direction or documented decision. Implemented = present in source. Verified = actually checked at the stated level. Proposed = not authorized. Retrospective entries rely on [original DEVLOG](DEVLOG.md), [CHANGELOG](../CHANGELOG.md), and Babuni.dev-provided 2026-10-26 to-do list, not an invented transcript.
 
 ## D-001 — Preserve original game identity while building a modern edition
 - **Direction:** Treat `Game.swf` and the earlier HTML5 reconstruction as stages in the project, not replaceable clutter.
@@ -74,26 +74,26 @@ These are editorial corrections distinguishing proposals, implemented changes an
 - **Direction:** Babuni.dev rejected the first swollen, glowing shatter prototype.
 - **Decision:** Use clipped fragments of the actual turquoise four-hole button with staged cracks/separation/scatter; still allow taps during destruction.
 - **State:** Implemented in `game.js` and `index.html`; documented tests in 2026-10-24 history; latest physical-device verification not established.
-- **Source:** [root DEVLOG](../DEVLOG.md) (2026-10-24).
+- **Source:** [root DEVLOG](DEVLOG.md) (2026-10-24).
 
 ## D-003 — Visibly conserved numerical score transfer
 - **Direction/iteration:** Rather than credit on tap and merely decorate with floaters, numbers carry `pendingValue` through collision and fusion, then collect into the green balance and finally the main total.
 - **Decision:** Pending values must be settled before Game Over and must not pay twice.
 - **State:** Implemented; simulated tests historically reported; broader regression and phone QA remain open.
-- **Source:** [root DEVLOG](../DEVLOG.md) (2026-10-25).
+- **Source:** [root DEVLOG](DEVLOG.md) (2026-10-25).
 
 ## D-004 — The Android host owns the one leaderboard
 - **Direction:** All Wi-Fi players see the host's results and the four final statistics; avoid divergent guest-local rankings.
 - **Decision:** Guests POST finished runs to host `/api/scores` and GET the same list; browser may retain nickname/mute preference but not a separate high-score ledger.
 - **State:** Implemented in JavaScript/Kotlin; physical cross-device acceptance unverified.
 - **Rejected approach:** Guest-local persistence or enrichment used to compensate for stale native host builds.
-- **Source:** [root DEVLOG](../DEVLOG.md) (2026-10-25).
+- **Source:** [root DEVLOG](DEVLOG.md) (2026-10-25).
 
 ## D-005 — Correct the stationary Game Over screen, not the data model
 - **Observation:** Babuni.dev reported guest high score absent from host Game Over view until another local action.
 - **Decision:** Poll host scores every three seconds during Game Over and refresh on return; keep host data authority unchanged.
 - **State:** Implemented and CI-regression tested; real two-device confirmation open.
-- **Source:** [root DEVLOG](../DEVLOG.md) (2026-10-26).
+- **Source:** [root DEVLOG](DEVLOG.md) (2026-10-26).
 
 ## D-006 — Release the same installed app, not a new TEST app
 - **Direction:** Babuni.dev wants an original-certificate, normal-package APK update. Experimental TEST packaging was not requested; no need to preserve disposable test scores.
@@ -122,38 +122,38 @@ These are editorial corrections distinguishing proposals, implemented changes an
 - **Historical baseline:** `ChatGPT Remake/README.md` describes one point **and one second** per click, and the earlier modern build still contained a button-cycle time increment.
 - **Revision:** ordinary taps/button fading no longer add time; the modern 60-second round is extended through **7→2s, 14→3s, 42→5s, 73→4s**. The previously used uniform +3-second bonus and direct awards on 21/37 were superseded.
 - **Status:** Implemented in game source; prior behavior is historic, not an open TODO.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), October 25 “Session stats, dynamic time awards.”
+- **Evidence:** [root DEVLOG](DEVLOG.md), October 25 “Session stats, dynamic time awards.”
 
 ## D-011 — Rewrite the 21→42 transformation after the initial prototype
 - **Earlier implemented attempt:** throw out 21 `1`s, duplicate them into **42 units**, gather and assemble 42.
 - **Babuni.dev's later requested choreography:** emit **21 units**, rebound against walls and each change from `1` to `2` while moving, then gather into a large 42. They must remain non-scoring decoration until the one exact 42 pickup.
 - **Decision:** The latter replaces the former. This is a specific superseded concept, **not** two independently active modes.
 - **Status:** Implemented; simulated runtime checks recorded. On-device visuals unverified.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), successive October 25 entries on 21→42.
+- **Evidence:** [root DEVLOG](DEVLOG.md), successive October 25 entries on 21→42.
 
 ## D-012 — Make Quick Strike a post-spawn challenge, distinct from Reaction measurement
 - **Early model:** Quick Strike was coupled to a reaction-time threshold around the 320 ms spawn animation; first idle page tap could distort Reaction.
 - **Revision:** 320 ms is the **spawn-in period**; a separate **73 ms** window immediately afterward enables Quick Strike. A qualifying first tap activates 2× values on all taps for that target, including the shatter. Reaction samples start after spawn-in and exclude page-load idle/early taps.
 - **State:** Implemented; simulated boundary tests recorded. Physical input timing not yet certified.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), October 25 Quick Strike and Reaction entries.
+- **Evidence:** [root DEVLOG](DEVLOG.md), October 25 Quick Strike and Reaction entries.
 
 ## D-013 — Favor intact button identity and readable numerical motion over maximal spectacle
 - **Rejected / corrected:** the first swollen/glowing pseudo-shatter, a floater hit-radius that ignored digit width, excessive number scaling and unthrottled same-frame chain merges.
 - **Result:** recognizable clipped SVG shards, rotated full-text bounding boxes, reduced scale, short merge recovery and score conservation. A later revision delayed fracture onset while shortening breakup.
 - **State:** Implemented changes; historic alternatives superseded.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), October 24–25 shatter, collisions and merge pacing.
+- **Evidence:** [root DEVLOG](DEVLOG.md), October 24–25 shatter, collisions and merge pacing.
 
 ## D-014 — Make each milestone and active hit audibly distinguishable
 - **Early approach:** a floater lineage rang a bell just once when reaching seven or more.
 - **Revision:** ring on each exact eligible value (7/14/21/37/42/73), then assign the special 42 and 73 *reveal* to `4273.ogg` rather than stacking a second ordinary bell. During active Quick Strike, the **activating** press and later presses select one of two custom impact sounds; ordinary hits use existing impacts.
 - **State:** Routing implemented; historic APKs included supplied audio; reproducible asset packaging and physical listening remain separate open work.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), October 25 bell/sound entries.
+- **Evidence:** [root DEVLOG](DEVLOG.md), October 25 bell/sound entries.
 
 ## D-015 — Keep a live ranking peripheral rather than obstructive
 - **Babuni.dev request:** Show the leading host high scores **underneath** the game with roughly **50%** opacity and a descending fade; do not replace the full Game Over leaderboard.
 - **AI interpretation:** `#live-leaderboard` sits below the framed playfield, has no pointer events, holds up to five names/point totals, and hides during Game Over when the full ranking takes over.
 - **State:** Implemented in web/Android HTML/JS; device visual check open.
-- **Evidence:** [root DEVLOG](../DEVLOG.md), October 25 live score ambience entry.
+- **Evidence:** [root DEVLOG](DEVLOG.md), October 25 live score ambience entry.
 
 ## D-016 — Trap Mode history recovery: from inaccessible archive to detailed Babuni.dev specification
 
@@ -167,7 +167,7 @@ These are editorial corrections distinguishing proposals, implemented changes an
 - **Babuni.dev's direct report (2026-10-26):** Target/Quick Strike, physics/combos, timer/HUD, sound volume and actual UI all tested and work. Two-device Wi-Fi hosting, live players, guest → host high scores, automatic three-second leaderboard refresh, saved four statistics and persistence across hosting restarts are all reported working.
 - **Babuni.dev's decision:** Do not keep re-adding these QA items as unfinished. Do not invent a score-submission retry feature because one old submission failed, and do not promote speculative startup/port-conflict handling or other elaborate hardening to mandatory work. No startup/port conflicts have been observed. The game can remain simple.
 - **Babuni.dev's classification:** Bluetooth hosting and peer-to-peer are **future ideas, not milestones or roadmap tasks**. The already-defined Red Trap Button remains a separate unimplemented feature.
-- **Implementation of this decision:** Active roadmap and QA ledger corrected; canonical `sfx/` audio mirrored into web/Android and build verification enabled. Normal app ID preserved. See [ROADMAP.md](../ROADMAP.md) and [QA.md](QA.md).
+- **Implementation of this decision:** Active roadmap and QA ledger corrected; canonical `sfx/` audio mirrored into web/Android and build verification enabled. Normal app ID preserved. See [ROADMAP.md](ROADMAP.md) and [QA.md](QA.md).
 - **Verification boundary:** User report refers to already-tested installed game; the newly compiled `1.0.1-beta` APK still needs its CI result and original-certificate signing to be called delivered.
 
 ## D-018 — AI organized Babuni.dev's first Button Game ideas; it did not originate the concept

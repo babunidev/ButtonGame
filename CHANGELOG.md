@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-19 — documentation moved into `docs/`
+
+- Moved `CONCEPT.md`, `ROADMAP.md`, `ASSET_RIGHTS.md`, `INSTALL.md` and `SOUNDS.md` into `docs/`. The separate root `DEVLOG.md` (24–26 October 2026) was merged into `docs/DEVLOG.md` with its original wording, so the project has one development log. The root keeps only `README.md`, `AGENTS.md`, `LICENSE` and `CHANGELOG.md`; links to the moved files and the documentation rules in `AGENTS.md` were updated. No code changed. Claude Code (Claude Opus 5.5).
+
 ## 2026-11-13 — Reaction and APM in the High scores panel
 
 - `game.js`, `index.html` (and Android mirror): each row of the top-5 High scores panel now shows the run's average reaction time and APM (`258 ms · 214 APM`, `—` when not recorded) next to the name and points. Session time stays only in the full Game Over list.

@@ -10,7 +10,7 @@ Each round begins with a moving turquoise button and a 60-second clock. Pressing
 
 **Traps** is an optional variation. When enabled, 10% of subsequent button spawns are red. Leaving a red button alone awards **3 points every third of a second (9 per second)**; tapping it ends the round immediately, after already-earned points finish collecting. The leaderboard identifies scores earned with Traps enabled.
 
-The full behavior is in [the game concept](CONCEPT.md) and [Trap Mode specification](docs/TRAP_MODE.md).
+The full behavior is in [the game concept](docs/CONCEPT.md) and [Trap Mode specification](docs/TRAP_MODE.md).
 
 ## Ways to play
 
@@ -33,7 +33,7 @@ Open `http://localhost:8000/` on the host computer. Other devices on the same re
 
 Use the supplied Python host, **not** `python3 -m http.server`: the generic static server does not provide the `/api/scores` and `/api/presence` endpoints. Desktop scores are stored in the ignored `.local-data/desktop-scores.json`, separately from Android-hosted scores. **This host is intended for a trusted LAN, not the public internet.**
 
-See [installation and hosting](INSTALL.md) for Android builds, network setup and packaging.
+See [installation and hosting](docs/INSTALL.md) for Android builds, network setup and packaging.
 
 ## What's working, and what's not yet verified
 
@@ -41,9 +41,9 @@ The game, Red Trap Button variation, host-backed high scores and Android Wi-Fi h
 
 The remaining release boundaries matter:
 
-- **Android updates:** an APK must be signed with the original installation certificate to upgrade the installed app in place. The certificate is not in this repository. Debug-signed CI APKs are not replacements for an original-signed release. See [installation and signing](INSTALL.md).
-- **Desktop sound:** ten original Ogg recordings are kept in `sfx/` and copied to game assets. MP3 fallbacks were included in a separately prepared desktop ZIP, but are not in the Git tree; sound can therefore differ by browser and package. A reported silent session has not been conclusively diagnosed. See [sound notes](SOUNDS.md).
-- **Global leaderboard:** a public server with one scrollable lifetime leaderboard is a planned extension, not established here as a deployed service. See [roadmap](ROADMAP.md).
+- **Android updates:** an APK must be signed with the original installation certificate to upgrade the installed app in place. The certificate is not in this repository. Debug-signed CI APKs are not replacements for an original-signed release. See [installation and signing](docs/INSTALL.md).
+- **Desktop sound:** ten original Ogg recordings are kept in `sfx/` and copied to game assets. MP3 fallbacks were included in a separately prepared desktop ZIP, but are not in the Git tree; sound can therefore differ by browser and package. A reported silent session has not been conclusively diagnosed. See [sound notes](docs/SOUNDS.md).
+- **Global leaderboard:** a public server with one scrollable lifetime leaderboard is a planned extension, not established here as a deployed service. See [roadmap](docs/ROADMAP.md).
 
 Older dated claims, test evidence and release history belong in the [changelog](CHANGELOG.md) and [QA notes](docs/QA.md), rather than being treated as current simply because they appeared in an earlier README.
 
@@ -51,14 +51,14 @@ Older dated claims, test evidence and release history belong in the [changelog](
 
 | Interested in… | Start with… |
 | --- | --- |
-| The idea and game mechanics | [Concept](CONCEPT.md) · [Design](docs/DESIGN.md) |
-| Playing, building or sharing | [Installation](INSTALL.md) · [Sounds](SOUNDS.md) |
-| What has been done, and what remains | [Changelog](CHANGELOG.md) · [Roadmap](ROADMAP.md) · [QA](docs/QA.md) |
+| The idea and game mechanics | [Concept](docs/CONCEPT.md) · [Design](docs/DESIGN.md) |
+| Playing, building or sharing | [Installation](docs/INSTALL.md) · [Sounds](docs/SOUNDS.md) |
+| What has been done, and what remains | [Changelog](CHANGELOG.md) · [Roadmap](docs/ROADMAP.md) · [QA](docs/QA.md) |
 | Code structure and data flow | [Architecture](docs/ARCHITECTURE.md) |
 | How the original idea changed | [Creative origins](docs/CREATIVE_ORIGINS.md) · [Development journal](docs/DEVLOG.md) |
 | Decisions, alternatives and attribution | [Decisions](docs/DECISIONS.md) · [AI collaboration](docs/AI_COLLABORATION.md) |
 
-The repository keeps the [original Flash game](Game.swf) and an [early reconstruction](ChatGPT%20Remake/README.md) as history, not as the current release. Its original detailed [development log](DEVLOG.md) is preserved alongside the curated journal.
+The repository keeps the [original Flash game](Game.swf) and an [early reconstruction](ChatGPT%20Remake/README.md) as history, not as the current release. Its original detailed development log is merged, with its original wording, into the [development journal](docs/DEVLOG.md).
 
 ## For contributors
 
@@ -70,4 +70,4 @@ Read [AGENTS.md](AGENTS.md) and [the documentation standard](docs/DOCUMENTATION.
 
 ## License
 
-Original game code is licensed under [MIT](LICENSE). Original sounds, artwork and brand assets are treated separately in [asset rights](ASSET_RIGHTS.md).
+Original game code is licensed under [MIT](LICENSE). Original sounds, artwork and brand assets are treated separately in [asset rights](docs/ASSET_RIGHTS.md).

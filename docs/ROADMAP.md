@@ -79,7 +79,7 @@ Do not reopen already creator-tested gameplay as a speculative task or claim a n
 
 **Updated 26 October 2026 from Babuni.dev's own device-testing report and the current GitHub source.**
 
-This is a short **active work list**. Previously tested features must not be repeatedly returned as unfinished QA tasks. The original seven-category checklist is preserved [unchanged as historical evidence](docs/HISTORICAL_CHECKLIST_2026-10-25.md); the [complete Red Trap Button specification](docs/TRAP_MODE.md) is separate.
+This is a short **active work list**. Previously tested features must not be repeatedly returned as unfinished QA tasks. The original seven-category checklist is preserved [unchanged as historical evidence](HISTORICAL_CHECKLIST_2026-10-25.md); the [complete Red Trap Button specification](TRAP_MODE.md) is separate.
 
 ## Desktop LAN high-score fix — 26 October 2026
 
@@ -112,7 +112,7 @@ This is a short **active work list**. Previously tested features must not be rep
 - [x] **Source OGG recordings present:** all three custom OGGs were already in root `sfx/`.
 - [x] **Documentation baseline:** README, concept, decisions, design, architecture, developer guidance, development journal and recovered historical checklists.
 
-These results are **Babuni.dev-reported device verification of the installed version**. They are not automatically proof that a newly rebuilt APK has been installed or signed. See [docs/QA.md](docs/QA.md).
+These results are **Babuni.dev-reported device verification of the installed version**. They are not automatically proof that a newly rebuilt APK has been installed or signed. See [docs/QA.md](QA.md).
 
 ## Current release work
 
@@ -125,7 +125,7 @@ These results are **Babuni.dev-reported device verification of the installed ver
 
 ## Red Trap Button — implemented in source; release/device acceptance pending
 
-The nine-item design is preserved without changing gameplay. [Full checklist and rules](docs/TRAP_MODE.md).
+The nine-item design is preserved without changing gameplay. [Full checklist and rules](TRAP_MODE.md).
 
 - [x] Pre-game Traps checkbox and matching red four-hole SVG button (first target remains normal).
 - [x] Random red replacements on **10% of subsequent spawns**; ordinary geometry, rotation and shatter.
@@ -138,7 +138,7 @@ The nine-item design is preserved without changing gameplay. [Full checklist and
 - [ ] Sign with the **original Android signing certificate** and deliver a true update to the existing installed game.
 - [ ] A short physical-device check of Trap Mode, ordinary mode and the host/guest leaderboard icon.
 
-**The full feature was authorized by Babuni.dev after the earlier planning-only phase.** Checkmarks here mean source implemented; they are **not** a claim that a replacement APK has been signed and installed. See [TRAP_MODE.md](docs/TRAP_MODE.md).
+**The full feature was authorized by Babuni.dev after the earlier planning-only phase.** Checkmarks here mean source implemented; they are **not** a claim that a replacement APK has been signed and installed. See [TRAP_MODE.md](TRAP_MODE.md).
 
 ## Maintenance and portfolio documentation
 
@@ -149,4 +149,4 @@ The nine-item design is preserved without changing gameplay. [Full checklist and
 
 Do **not** create a new score-submission retry system based on a one-off old bug. Do **not** turn hypothetical bind conflicts, startup failures, score-file corruption or anti-cheat hardening into mandatory milestones for this simple game. Babuni.dev reports no server startup or port conflict issues. Additional complexity requires a real demonstrated problem or a new Babuni.dev request.
 
-Exploratory alternative network approaches are historical ideas recorded in [CONCEPT.md](CONCEPT.md) and [docs/DECISIONS.md](docs/DECISIONS.md), **not roadmap milestones**.
+Exploratory alternative network approaches are historical ideas recorded in [CONCEPT.md](CONCEPT.md) and [docs/DECISIONS.md](DECISIONS.md), **not roadmap milestones**.

@@ -4,7 +4,7 @@
 **Historical recovery:** 26 October 2026  
 **Evidence:** A Babuni.dev-supplied markdown export, locally titled `ButtonGameDevChat2.md`, of the earlier Button Game development conversation. The export was read privately for this recovery; **it is deliberately not checked into this public repository**. Its opening text is present, but some image references and downloadable attachments are only export placeholders rather than the image or APK bytes. Most messages have no individual timestamp; ordering is known, while dates are inferred only where independent GitHub records support them.
 
-This is a publication-safe **account of the creative process**, not a verbatim publication of the chat. Babuni.dev's requests, objections, ideas and decisions are distinguished from AI-produced summaries, technical interpretations and implementations. The contemporary status of each feature should be checked in [ROADMAP.md](../ROADMAP.md) and [docs/QA.md](QA.md), not inferred from an old checklist.
+This is a publication-safe **account of the creative process**, not a verbatim publication of the chat. Babuni.dev's requests, objections, ideas and decisions are distinguished from AI-produced summaries, technical interpretations and implementations. The contemporary status of each feature should be checked in [ROADMAP.md](ROADMAP.md) and [docs/QA.md](QA.md), not inferred from an old checklist.
 
 ## Beginning: collecting ideas for an existing, remade game
 
@@ -82,11 +82,11 @@ The export also contains occasional assistant-generated claims of “done” wit
 - **Not necessarily complete:** The export's completeness and individual message dates cannot be independently certified. Some embedded screenshots, generated artwork and historic APK attachments appear only as unresolved export references. Do not claim to have examined image contents based on those placeholders.
 - **Not published:** The raw export includes private conversational material and sensitive historic signing information. Do **not** commit `DevChats/ButtonGameDevChat2.md` or any unredacted transcription to a public repository. Preserve a private local copy; publish this curated account instead.
 - **No invented attribution:** The old Flash project's exact origination date and other missing details remain unknown. Creative direction and choices documented here are Babuni.dev's; the assistant's role is specified where known.
-- **Status boundary:** This is **history recovery, not feature implementation or a release**. Refer to [ROADMAP.md](../ROADMAP.md) for real unfinished work and [DEVLOG.md](DEVLOG.md) for continuing narrative.
+- **Status boundary:** This is **history recovery, not feature implementation or a release**. Refer to [ROADMAP.md](ROADMAP.md) for real unfinished work and [DEVLOG.md](DEVLOG.md) for continuing narrative.
 
 ## Connected records
 
-- [CONCEPT.md](../CONCEPT.md): creative identity and active concept boundaries
+- [CONCEPT.md](CONCEPT.md): creative identity and active concept boundaries
 - [DEVLOG.md](DEVLOG.md): development story and subsequent recovery notes
 - [DECISIONS.md](DECISIONS.md): individual accepted, corrected and deferred design decisions
 - [DESIGN.md](DESIGN.md): visual and interaction rationale

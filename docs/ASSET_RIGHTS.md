@@ -1,6 +1,6 @@
 # Game code and creative assets
 
-The original Button Game source code and associated software documentation are released under [MIT](LICENSE).
+The original Button Game source code and associated software documentation are released under [MIT](../LICENSE).
 
 The MIT license does **not** automatically license the original game logo, artwork, game identity, or audio recordings. Babuni retains whatever rights are legally protectable in those works unless a specific asset states otherwise.
 
